@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD PAYMENT</title>
+    <style>
+        #pay {
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 20%;
+            box-shadow: rgba(50, 55, 58, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+            border-radius: 1rem;
+            padding: 30px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: -10px;
+            font-size: 22px;
+            color: rgb(0, 139, 19);
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 22px;
+            color: rgb(0, 139, 19);
+        }
+
+        a {
+            text-decoration: none;
+            color: aliceblue;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        * {
+            box-sizing: content-box;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        .f-row {
+            display: flex;
+        }
+
+        .f-group {
+            padding: 5px;
+            width: 50%;
+            width: 100%;
+        }
+
+        button {
+            width: 70%;
+            padding: 12px;
+            background-color: rgb(0, 139, 19);
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            resize: vertical;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pay">
+        <form id="card">
+            <h1> CARD DETAILS</h1>
+            <label>Card Holder's Name </label>
+            <input id="name" type="text" placeholder="Card Holder Name" />
+            <label>Card Number:</label>
+            <input id="num" type="number" data-mask="0000 0000 0000 0000" placeholder="Card Number"
+                pattern="[000] [000] [000] [000]">
+            <div class="f-row">
+                <div class="f-group">
+                    <label id="label1">Expiry date:</label>
+                    <input id="date" type="text" name="expiry-date" placeholder="00 / 0000">
+                </div>
+                <div class="f-group">
+                    <label id="label2">CVV</label><br>
+                    <input id="cvv" type="text" data-mask="000" placeholder="000">
+                </div>
+            </div>
+            <button type="submit"><a href="otp.html"> PAY NOW</a> </button>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", proceed);
+    function proceed() {
+        event.preventDefault();
+        var name = document.getElementById("name").value;
+        name.innertext = name;
+        var cardnum = document.getElementById("num").value == "1234123412341234";
+        var CVV = document.getElementById("cvv").value == "123";
+        var date = document.getElementById("date").value == "07/2027"
+        if (cardnum && CVV && date) {
+            window.location.href = "otp.html"
+            return true;
+        }
+        else {
+            alert(" Wrong Credentials ");
+        }
+        var date = document.getElementById("date").value;
+    }
+</script>
