@@ -27,7 +27,7 @@ const moviesData = (data)=> {
     date.innerText = e.date;
 
     let imdb = document.createElement("h3");
-    imdb.innerText = "IMDB Rating: " + e.imdb;
+    imdb.innerText = `IMDB Rating: ${e.imdb}`;
 
     let genre = document.createElement("h3");
     genre.innerText = "Genre: " + e.genre;
@@ -38,7 +38,7 @@ const moviesData = (data)=> {
 
     more.addEventListener("click", ()=>{
         localStorage.setItem("movieDetails", JSON.stringify(e))
-        window.location.href = "movieDetails.html";
+        window.location.href = "../pages/movieDetails.html";
     })
 
     div.append(image, name, date, imdb , genre , more);
@@ -47,6 +47,8 @@ const moviesData = (data)=> {
   });
 }
 
+
+// Sort By Rating
 const ratingsort = ()=> {
   let selected = document.getElementById("sortrating").value;
   console.log(selected);
@@ -66,7 +68,7 @@ const ratingsort = ()=> {
   moviesData(movie);
 }
 
-
+// Filter By Genre
 const filtermovies = ()=> {
  let selected = document.getElementById("filtergenre").value
  console.log(selected);

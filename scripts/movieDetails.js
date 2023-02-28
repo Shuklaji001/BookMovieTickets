@@ -30,7 +30,7 @@ const movieDetails = ()=> {
     
     bookTicket.addEventListener("click", ()=>{
         localStorage.setItem("movieBook", JSON.stringify(details))
-        window.location.href = "../seats.html";
+        window.location.href = "../pages/seats.html";
     })
 
       div.append(image, name, date, imdb , genre ,trailer,bookTicket);

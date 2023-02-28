@@ -32,7 +32,7 @@ const SignUp = (event)=> {
     dataArr.push(dataobj);
     localStorage.setItem("allData", JSON.stringify(dataArr));
     console.log(dataobj);
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   }
 }
 

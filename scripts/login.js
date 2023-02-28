@@ -13,7 +13,7 @@ const logIn = ()=> {
     
     if(Auth){
         alert("Login successful")
-        window.location.href = "movies.html"
+        window.location.href = "pages/movies.html"
     }
     else{
         alert("Login failed") 
