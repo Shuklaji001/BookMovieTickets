@@ -12,7 +12,7 @@ const displayMovieName = ()=>{
 }
 displayMovieName();
 
-
+// display seats on UI
 const generateSeat = ()=>{
    for(let i=0; i<6;i++){
       let row = document.createElement('div')
@@ -36,6 +36,8 @@ const generateSeat = ()=>{
    
 generateSeat()
 
+
+// Select seats for booking
 const selectSeats = (i,j)=>{
 
  let seatsArr = JSON.parse(localStorage.getItem('seatsArr')) || []

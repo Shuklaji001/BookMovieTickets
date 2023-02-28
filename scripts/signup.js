@@ -1,5 +1,7 @@
 var dataArr = JSON.parse(localStorage.getItem("allData")) || [];
 
+
+// User Registration Function
 const SignUp = (event)=> {
   event.preventDefault();
   var email_up = document.getElementById("email").value;

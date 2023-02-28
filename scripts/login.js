@@ -1,5 +1,6 @@
 var getDataArr = JSON.parse(localStorage.getItem("allData")) || []
 
+// Login function
 const logIn = ()=> {
     event.preventDefault()
 

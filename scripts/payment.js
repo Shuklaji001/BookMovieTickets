@@ -1,3 +1,4 @@
+    // Payment details
     const proceed =()=> {
         event.preventDefault();
         let name = document.getElementById("name").value;

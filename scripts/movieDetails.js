@@ -1,6 +1,8 @@
 let details = JSON.parse(localStorage.getItem("movieDetails")) || []
 let selectedMovie = document.querySelector(".detailContainer")
 
+
+// display particular movie details
 const movieDetails = ()=> {
     
       let div = document.createElement("div");
@@ -16,10 +18,10 @@ const movieDetails = ()=> {
       date.innerText = details.date;
   
       let imdb = document.createElement("h3");
-      imdb.innerText = "IMDB Rating: " + details.imdb;
+      imdb.innerText = `IMDB Rating:   ${details.imdb}`;
   
       let genre = document.createElement("h3");
-      genre.innerText = "Genre: " + details.genre;
+      genre.innerText = `Genre:  + ${details.genre}`;
   
       let trailer = document.createElement("iframe");
       trailer.setAttribute("src", details.trailer);

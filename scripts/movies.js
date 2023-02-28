@@ -10,6 +10,7 @@ const servercall = (filter) =>{
 
 var movie ;
 
+// Display the movies
 const moviesData = (data)=> {
   movie = data;
   document.querySelector("#movies").innerHTML = "";
@@ -30,7 +31,7 @@ const moviesData = (data)=> {
     imdb.innerText = `IMDB Rating: ${e.imdb}`;
 
     let genre = document.createElement("h3");
-    genre.innerText = "Genre: " + e.genre;
+    genre.innerText = `Genre:  + ${e.genre}`;
 
     let more = document.createElement("p");
     more.innerText = "More Info";
