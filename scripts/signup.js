@@ -1,4 +1,8 @@
-var dataArr = JSON.parse(localStorage.getItem("allData")) || [];
+import { allUsers } from "../component/global-variable.js";
+import { getData, setData } from "../component/local-storage.js";
+
+
+let  dataArr = getData(allUsers) || [];
 
 
 // User Registration Function
@@ -32,8 +36,8 @@ const SignUp = (event)=> {
   }
    else {
     dataArr.push(dataobj);
-    localStorage.setItem("allData", JSON.stringify(dataArr));
-    console.log(dataobj);
+    setData(allUsers,dataArr)
+    console.log(dataobj,dataArr);
     window.location.href = "../index.html";
   }
 }
