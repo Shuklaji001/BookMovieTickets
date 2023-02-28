@@ -7,7 +7,7 @@ alert(otp)
 const check = (event)=>{
         event.preventDefault();
        
-        var inp = document.getElementById("code").value == otp;
+        let inp = document.getElementById("code").value == otp;
         if(inp){
             alert("Payment Successful!!");
             window.location.href="../pages/movies.html"

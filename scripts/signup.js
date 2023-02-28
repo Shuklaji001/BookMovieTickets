@@ -8,12 +8,12 @@ let  dataArr = getData(allUsers) || [];
 // User Registration Function
 const SignUp = (event)=> {
   event.preventDefault();
-  var email_up = document.getElementById("email").value;
-  var username_up = document.getElementById("username").value;
-  var number_up = document.getElementById("number").value;
-  var password_up = document.getElementById("password").value;
+  let email_up = document.getElementById("email").value;
+  let username_up = document.getElementById("username").value;
+  let number_up = document.getElementById("number").value;
+  let password_up = document.getElementById("password").value;
 
-  var dataobj = {
+  let dataobj = {
     email: email_up,
     username: username_up,
     number: number_up,

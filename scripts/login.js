@@ -4,8 +4,8 @@ var getDataArr = JSON.parse(localStorage.getItem("allData")) || []
 const logIn = ()=> {
     event.preventDefault()
 
-    var username = document.getElementById("username").value
-    var password = document.getElementById("password").value
+    let username = document.getElementById("username").value
+    let password = document.getElementById("password").value
 
     console.log(getDataArr)
 
