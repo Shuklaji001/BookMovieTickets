@@ -1,4 +1,7 @@
-let details = JSON.parse(localStorage.getItem("movieDetails")) || []
+import { MOVIE_BOOK, MOVIE_DETAILS } from "../component/global-variable.js";
+import { getData, setData } from "../component/local-storage.js";
+
+let details = getData(MOVIE_DETAILS) || []
 let selectedMovie = document.querySelector(".detailContainer")
 
 
@@ -27,13 +30,13 @@ const movieDetails = ()=> {
       trailer.setAttribute("src", details.trailer);
 
       let bookTicket = document.createElement("p");
-    bookTicket.innerText = "Book Tickets";
-    bookTicket.setAttribute("class", "bookticket");
+      bookTicket.innerText = "Book Tickets";
+      bookTicket.setAttribute("class", "bookticket");
     
-    bookTicket.addEventListener("click", ()=>{
-        localStorage.setItem("movieBook", JSON.stringify(details))
+      bookTicket.addEventListener("click", ()=>{
+        setData(MOVIE_BOOK,details)
         window.location.href = "../pages/seats.html";
-    })
+      })
 
       div.append(image, name, date, imdb , genre ,trailer,bookTicket);
   

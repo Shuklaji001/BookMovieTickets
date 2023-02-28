@@ -28,20 +28,6 @@
     height: 300px;
 }
 
-#slideshow{
-    width:50%;
-    border:1px solid red;
-    display:flex;
-    margin:auto;
-    height:400px;
-}
-.slides{
-    width:80%;
-    height:100%;
-    display:flex;
-    margin:auto;
-}
-
 .more{
     color:blue;
     text-decoration:underline;

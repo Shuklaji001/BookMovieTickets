@@ -1,11 +1,19 @@
-const servercall = (filter) =>{
-    let api=`http://localhost:3000/moviesData`
+import { MOVIE_DETAILS } from "../component/global-variable.js";
+import { setData } from "../component/local-storage.js";
+
+const servercall = async (filter) =>{
+    let api= `http://localhost:3000/moviesData`
     if(filter)
       api=`http://localhost:3000/moviesData?q=${filter}`
-
-    fetch(api)
-    .then((res) => res.json())
-    .then((res) => moviesData(res))
+    
+      try {
+        const res = await fetch(api);
+        const jsonData = await res.json();
+        moviesData(jsonData)
+      } 
+      catch (error) {
+        console.log("error", error);
+      }
 }
 
 var movie ;
@@ -31,14 +39,14 @@ const moviesData = (data)=> {
     imdb.innerText = `IMDB Rating: ${e.imdb}`;
 
     let genre = document.createElement("h3");
-    genre.innerText = `Genre:  + ${e.genre}`;
+    genre.innerText = `Genre: ${e.genre}`;
 
     let more = document.createElement("p");
     more.innerText = "More Info";
     more.setAttribute("class", "more");
 
     more.addEventListener("click", ()=>{
-        localStorage.setItem("movieDetails", JSON.stringify(e))
+        setData(MOVIE_DETAILS,e)
         window.location.href = "../pages/movieDetails.html";
     })
 
@@ -77,3 +85,5 @@ const filtermovies = ()=> {
 }
 
 servercall();
+document.querySelector("#sortrating").addEventListener("change",ratingsort)
+document.querySelector("#filtergenre").addEventListener("change",filtermovies)

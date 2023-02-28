@@ -1,4 +1,8 @@
-var getDataArr = JSON.parse(localStorage.getItem("allData")) || []
+import { allUsers } from "../component/global-variable.js"
+import { getData } from "../component/local-storage.js"
+
+
+var getDataArr = getData(allUsers) || []
 
 // Login function
 const logIn = ()=> {
