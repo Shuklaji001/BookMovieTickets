@@ -6,9 +6,9 @@ Display movie choices and seats in a theater to select from in order to purchase
 
 - Display UI with movie select, screen, seats & seat info
 - User can register themselves
-- User can select a movie/price
-- User can search , sort and filter movie selections
-- User can select/deselect seats
+- User can select a movie
+- User can sort and filter movie selections
+- User can select seats
 - User can not select occupied seats
 - Number of seats and price will update
 - Save seats, movie and price to local storage so that UI is still populated on refresh
