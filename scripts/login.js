@@ -1,11 +1,11 @@
-import { allUsers } from "../component/global-variable.js"
+import { ALL_USERS } from "../component/global-variable.js"
 import { getData } from "../component/local-storage.js"
 
 
-var getDataArr = getData(allUsers) || []
+var getDataArr = getData(ALL_USERS) || []
 
 // Login function
-const logIn = ()=> {
+const logIn = (event)=> {
     event.preventDefault()
 
     let username = document.getElementById("username").value
@@ -13,10 +13,10 @@ const logIn = ()=> {
 
     console.log(getDataArr)
 
-    let Auth = getDataArr.find( (e)=> e.username === username && e.password === password) 
+    let auth = getDataArr.find( (e)=> e.username === username && e.password === password) 
 
     
-    if(Auth){
+    if(auth){
         alert("Login successful")
         window.location.href = "pages/movies.html"
     }

@@ -22,7 +22,7 @@ var movie ;
 const moviesData = (data)=> {
   movie = data;
   document.querySelector("#movies").innerHTML = "";
-  data.map(function (e) {
+  data.map( (e)=> {
     let div = document.createElement("div");
 
     let image = document.createElement("img");

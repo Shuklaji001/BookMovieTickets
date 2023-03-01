@@ -1,8 +1,8 @@
-import { allUsers } from "../component/global-variable.js";
+import { ALL_USERS } from "../component/global-variable.js";
 import { getData, setData } from "../component/local-storage.js";
 
 
-let  dataArr = getData(allUsers) || [];
+let  dataArr = getData(ALL_USERS) || [];
 
 
 // User Registration Function
