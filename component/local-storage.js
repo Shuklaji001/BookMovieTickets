@@ -8,7 +8,7 @@ const getData = (key)=>{
             return value
         }
         catch(error){
-         console.error();
+         console.error(error);
         }
     }
     else{
